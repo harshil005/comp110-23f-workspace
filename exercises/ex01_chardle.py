@@ -9,26 +9,28 @@ if len(search_word) != 5:
     exit()
 
 search_char = input("Enter a single character: ")
-
+if len(search_char) != 1:
+    print("Error: Character must be a single character.")
+    exit()
 
 print(f'Searching for {search_char} in {search_word}')
 char_count = 0
 
 if search_word[0] == search_char:
-    print(search_char +" found at index 0")
-    char_count +=1
+    print(search_char + " found at index 0")
+    char_count += 1
 if search_word[1] == search_char:
-    print(search_char +" found at index 1")
-    char_count +=1
+    print(search_char + " found at index 1")
+    char_count += 1
 if search_word[2] == search_char:
-    print(search_char +" found at index 2")
-    char_count +=1
+    print(search_char + " found at index 2")
+    char_count += 1
 if search_word[3] == search_char:
-    print(search_char +" found at index 3")
-    char_count +=1
+    print(search_char + " found at index 3")
+    char_count += 1
 if search_word[4] == search_char:
-    print(search_char +" found at index 4")
-    char_count +=1
+    print(search_char + " found at index 4")
+    char_count += 1
 
 if char_count == 0:
     print(f"No instances of {search_char} found in {search_word}")
