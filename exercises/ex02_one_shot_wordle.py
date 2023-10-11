@@ -1,3 +1,4 @@
+"""EX02 - One-Shot Wordle - Loops!"""
 __author__ = "730711765"
 
 WHITE_BOX: str = "\U00002B1C"
@@ -13,21 +14,19 @@ guess = input(f"What is your {len(secret_word)}-letter guess? ")
 while len(guess) != len(secret_word):
     guess = input(f"That was not {len(secret_word)} letters! Try again: ")
 
-
-
 while this_char < len(secret_word):
     if guess[this_char] == secret_word[this_char]:
         word_check += GREEN_BOX
     else:
         char_in_word = False
         char_count = 0
-        while char_in_word != True and char_count != len(secret_word):
+        while char_in_word is not True and char_count != len(secret_word):
             if guess[this_char] == secret_word[char_count]:
                 char_in_word = True
             else:
                 char_count += 1
         
-        if char_in_word == True:
+        if char_in_word is True:
             word_check += YELLOW_BOX
         else:
             word_check += WHITE_BOX
