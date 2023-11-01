@@ -1,7 +1,9 @@
-"""`list` Utility Functions"""
+"""`list` Utility Functions."""
 __author__ = "730711765"
 
-def all(check_list: list, check_int: int) -> bool:
+
+def all(check_list: list[int], check_int: int) -> bool:
+    """Checks if a list is made up of all of a certain integer."""
     count = 0
     if len(check_list) == 0:
         return False
@@ -13,7 +15,8 @@ def all(check_list: list, check_int: int) -> bool:
         return True
 
 
-def max(input_list: list) -> int:
+def max(input_list: list[int]) -> int:
+    """Finds the maximum value of a given list."""
     if len(input_list) == 0:
         raise ValueError("max() arg is an empty List")
     loop_count = 1
@@ -25,7 +28,8 @@ def max(input_list: list) -> int:
     return max
 
 
-def is_equal(list1: list, list2: list) -> bool:
+def is_equal(list1: list[int], list2: list[int]) -> bool:
+    """Checks if two lists are exactly the same at every index."""
     if len(list1) != len(list2):
         return False
     
@@ -35,3 +39,5 @@ def is_equal(list1: list, list2: list) -> bool:
             return False
         check_count += 1
     return True
+
+print(max([]))
