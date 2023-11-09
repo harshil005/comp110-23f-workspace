@@ -15,7 +15,7 @@ def invert(inp_dict: dict[str, str]) -> dict[str, str]:
 
 def favorite_color(dict_in: dict[str, str]) -> str:
     """Returns the color in a given dict which occurs the most frequently."""
-    counter_dict: dict[str,int] = {}
+    counter_dict: dict[str, int] = {}
     for elem in dict_in:
         if dict_in[elem] not in counter_dict:
             counter_dict[dict_in[elem]] = 1
@@ -31,9 +31,9 @@ def favorite_color(dict_in: dict[str, str]) -> str:
     return max_color
 
 
-def count(valuelist: list[str]) -> dict[str,int]:
+def count(valuelist: list[str]) -> dict[str, int]:
     """Counts how many times each value occurs in a list and returns a list with the frequencies."""
-    count_dict: dict[str,int] = {}
+    count_dict: dict[str, int] = {}
     for value in valuelist:
         if value not in count_dict:
             count_dict[value] = 1
@@ -59,5 +59,6 @@ def update_attendance(update_dict: dict[str, list[str]], day: str, student: str)
     if day not in update_dict:
         update_dict[day] = [student]
     else:
-        update_dict[day].append(student)
-    return(update_dict)
+        if student not in update_dict[day]:
+            update_dict[day].append(student)
+    return (update_dict)
